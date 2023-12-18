@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "459225185400",
+    "project_id": "sentify-1163d",
+    "storage_bucket": "sentify-1163d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459225185400:android:72b9499c9b9d18b778018d",
+        "android_client_info": {
+          "package_name": "com.example.sentimentanalysis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc78oWeYwG-WfIVPv3TQ1b3LrRYLW_llg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459225185400:android:033f30c1e21769ed78018d",
+        "android_client_info": {
+          "package_name": "com.sih.sentify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc78oWeYwG-WfIVPv3TQ1b3LrRYLW_llg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
