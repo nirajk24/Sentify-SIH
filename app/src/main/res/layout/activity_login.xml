@@ -36,7 +36,7 @@
             android:fontFamily="@font/bungee"
             android:text="ENTIFY"
             android:textAlignment="center"
-            android:textColor="#ffbf00"
+            android:textColor="@color/colorPrimary"
             android:textSize="48sp" />
 
 
@@ -77,6 +77,7 @@
             android:drawableTint="@color/white"
             android:hint="Email"
             android:inputType="textEmailAddress"
+            android:textColor="@color/white"
             />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout

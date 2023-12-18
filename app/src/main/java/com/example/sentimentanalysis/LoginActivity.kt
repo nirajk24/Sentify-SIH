@@ -7,11 +7,15 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.sentimentanalysis.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var progressDialog:Dialog
     private lateinit var dialogText: TextView
     private lateinit var binding:ActivityLoginBinding
+    private lateinit var auth:FirebaseAuth
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityLoginBinding.inflate(layoutInflater)
@@ -24,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
         dialogText=progressDialog.findViewById(R.id.dialog_text)
         dialogText.text="Signing In..."
 
+        auth=FirebaseAuth.getInstance()
 
         binding.btnLogin.setOnClickListener {
             if(validateData()){
@@ -38,7 +43,24 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login() {
-        TODO("Not yet implemented")
+        auth.signInWithEmailAndPassword(binding.etMail.text.toString().trim(), binding.etPassword.text.toString().trim())
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "signInWithEmail:success")
+                    val user = auth.currentUser
+                    updateUI(user)
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "signInWithEmail:failure", task.exception)
+                    Toast.makeText(
+                        baseContext,
+                        "Authentication failed.",
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                    updateUI(null)
+                }
+            }
     }
 
     private fun validateData(): Boolean {
