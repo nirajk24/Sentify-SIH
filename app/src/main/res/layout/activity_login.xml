@@ -104,6 +104,7 @@
                 android:drawableTint="@color/white"
                 android:hint="Password"
                 android:inputType="textPassword"
+                android:textColor="@color/white"
 
                 />
         </com.google.android.material.textfield.TextInputLayout>

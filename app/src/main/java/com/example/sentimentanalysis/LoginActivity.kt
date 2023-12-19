@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import com.example.sentimentanalysis.databinding.ActivityLoginBinding
+import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -30,6 +31,22 @@ class LoginActivity : AppCompatActivity() {
         dialogText.text="Signing In..."
 
         auth=FirebaseAuth.getInstance()
+        if(auth.currentUser!=null){
+            val i = Intent(this@LoginActivity,MainActivity::class.java)
+            startActivity(i)
+            this@LoginActivity.finish()
+        }
+
+        val signInRequest = BeginSignInRequest.builder()
+            .setGoogleIdTokenRequestOptions(
+                BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
+                    .setSupported(true)
+                    // Your server's client ID, not your Android client ID.
+                    .setServerClientId(getString(R.string.your_web_client_id))
+                    // Only show accounts previously used to sign in.
+                    .setFilterByAuthorizedAccounts(true)
+                    .build())
+            .build()
 
         binding.btnLogin.setOnClickListener {
             if(validateData()){
