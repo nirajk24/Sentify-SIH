@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity"
+    tools:context=".auth.SignUpActivity"
     android:background="@drawable/peakpx">
 
     <ImageView
@@ -18,18 +18,52 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_arrow_back" />
 
-    <ImageView
-        android:layout_marginTop="64dp"
-        android:id="@+id/logo_image"
-        android:layout_width="250dp"
-        android:layout_height="180dp"
-        android:src="@drawable/ic_logo2"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:textAlignment="center"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@+id/clCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bungee"
+            android:text="S"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/bungee"
+            android:text="ENTIFY"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="48sp" />
+
+
+    </LinearLayout>
+
+<!--    <ImageView-->
+<!--        android:layout_marginTop="64dp"-->
+<!--        android:id="@+id/logo_image"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="180dp"-->
+<!--        android:src="@drawable/ic_logo2"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clCard"
