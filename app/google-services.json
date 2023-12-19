@@ -12,7 +12,20 @@
           "package_name": "com.example.sentimentanalysis"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "459225185400-bbtupg6t50b2kt53dpgef822811mi9ru.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sentimentanalysis",
+            "certificate_hash": "c970518117941b4632dd0d3e636eac91eb1079f5"
+          }
+        },
+        {
+          "client_id": "459225185400-vbj4pf71ctrktlt8n4hhtm0nl45okeoj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCc78oWeYwG-WfIVPv3TQ1b3LrRYLW_llg"
@@ -20,26 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:459225185400:android:033f30c1e21769ed78018d",
-        "android_client_info": {
-          "package_name": "com.sih.sentify"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCc78oWeYwG-WfIVPv3TQ1b3LrRYLW_llg"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459225185400-vbj4pf71ctrktlt8n4hhtm0nl45okeoj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

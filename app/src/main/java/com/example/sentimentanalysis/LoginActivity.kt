@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import com.example.sentimentanalysis.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -43,22 +44,20 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login() {
+        progressDialog.show()
         auth.signInWithEmailAndPassword(binding.etMail.text.toString().trim(), binding.etPassword.text.toString().trim())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithEmail:success")
-                    val user = auth.currentUser
-                    updateUI(user)
+                    progressDialog.dismiss()
+                    Toast.makeText(this@LoginActivity,"Login Success",Toast.LENGTH_SHORT).show()
+                    val i = Intent(this@LoginActivity,MainActivity::class.java)
+                    startActivity(i)
+                    this@LoginActivity.finish()
                 } else {
+                    progressDialog.dismiss()
                     // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    Toast.makeText(
-                        baseContext,
-                        "Authentication failed.",
-                        Toast.LENGTH_SHORT,
-                    ).show()
-                    updateUI(null)
+                    Toast.makeText(this@LoginActivity, task.exception!!.message.toString(),Toast.LENGTH_SHORT).show()
                 }
             }
     }
