@@ -1,4 +1,4 @@
-package com.example.sentimentanalysis
+package com.example.sentimentanalysis.auth
 
 import android.app.Dialog
 import android.content.Intent
@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import com.example.sentimentanalysis.sentiment.MainActivity
+import com.example.sentimentanalysis.R
 import com.example.sentimentanalysis.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.firebase.auth.FirebaseAuth
@@ -32,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
 
         auth=FirebaseAuth.getInstance()
         if(auth.currentUser!=null){
-            val i = Intent(this@LoginActivity,MainActivity::class.java)
+            val i = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(i)
             this@LoginActivity.finish()
         }
@@ -54,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         binding.btnSP.setOnClickListener {
-            val i= Intent(this@LoginActivity,SignUpActivity::class.java)
+            val i= Intent(this@LoginActivity, SignUpActivity::class.java)
             startActivity(i)
         }
 
@@ -68,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     progressDialog.dismiss()
                     Toast.makeText(this@LoginActivity,"Login Success",Toast.LENGTH_SHORT).show()
-                    val i = Intent(this@LoginActivity,MainActivity::class.java)
+                    val i = Intent(this@LoginActivity, MainActivity::class.java)
                     startActivity(i)
                     this@LoginActivity.finish()
                 } else {
