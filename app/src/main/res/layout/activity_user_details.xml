@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/black"
+        android:background="@color/background"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:padding="16dp"
+            android:padding="20dp"
             android:elevation="4dp"
             android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,14 +74,13 @@
             app:layout_constraintTop_toTopOf="@id/ivBack" />
     </LinearLayout>
 
-
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cvProfileCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/background"
         app:cardElevation="0dp"
+        android:layout_marginTop="-8dp"
         app:cardUseCompatPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +109,8 @@
                 <ImageView
                     android:id="@+id/ivProfilePic"
                     android:layout_width="match_parent"
-                    android:src="@drawable/twitter"
+                    android:src="@drawable/peakpx"
+                    android:scaleType="centerCrop"
                     android:layout_height="match_parent" />
             </androidx.cardview.widget.CardView>
 
@@ -191,6 +191,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTweets"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
