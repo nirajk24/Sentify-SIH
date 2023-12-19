@@ -14,7 +14,7 @@ val userProfileAnalysis = MainFeature(
     mainFeaturesCatchyPhrase = "Dive Deep into User Sentiments",
 //    mainFeaturesImage = R.drawable.user_profile_analysis_icon,
     mainFeaturesImage = R.drawable.twitter,
-    "001"
+    "#001"
 )
 
 val hashtagAnalysis = MainFeature(
@@ -22,15 +22,15 @@ val hashtagAnalysis = MainFeature(
     mainFeaturesCatchyPhrase = "Uncover the Mood behind the #Trends",
 //    mainFeaturesImage = R.drawable.hashtag_analysis_icon,
     mainFeaturesImage = R.drawable.twitter,
-    "002"
+    "#002"
 )
 
 val rephrasingTweets = MainFeature(
-    mainFeaturesHeading = "Sentiment-based Tweet Rephrasing",
+    mainFeaturesHeading = "Tweet Rephrasing",
     mainFeaturesCatchyPhrase = "Reshape Your Words, Reflect Your Emotions",
 //    mainFeaturesImage = R.drawable.tweet_rephrasing_icon,
     mainFeaturesImage = R.drawable.twitter,
-    "003"
+    "#003"
 )
 
 val singleTweetAnalysis = MainFeature(
@@ -38,7 +38,7 @@ val singleTweetAnalysis = MainFeature(
     mainFeaturesCatchyPhrase = "Insight into Every Tweet's Emotional Core",
 //    mainFeaturesImage = R.drawable.single_tweet_analysis_icon,
     mainFeaturesImage = R.drawable.twitter,
-    "004"
+    "#004"
 )
 
 val mainFeaturesList = listOf(userProfileAnalysis, hashtagAnalysis, rephrasingTweets, singleTweetAnalysis)
