@@ -16,9 +16,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".sentiment.SingleTweetAnalysisActivity"
-            android:exported="false" />
-        <activity
             android:name=".sentiment.UserDetailsActivity"
             android:exported="false" />
         <activity
@@ -32,10 +29,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".sentiment.MainActivity"
-            android:exported="true" />
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".InputActivity"
+            android:exported="true">
+
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sentimentanalysis.InputActivity
 import com.example.sentimentanalysis.adapter.MainAdapter
 import com.example.sentimentanalysis.databinding.ActivityMainBinding
 import com.example.sentimentanalysis.dataclass.Demo
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
 
         setUpMainRecyclerView()
 
