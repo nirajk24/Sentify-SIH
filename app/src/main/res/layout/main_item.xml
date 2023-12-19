@@ -2,9 +2,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
+    android:layout_height="wrap_content">
 
+<!--    #956F35FC-->
     <androidx.cardview.widget.CardView
         android:id="@+id/cvMainCard"
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="#956F35FC"
+        android:backgroundTint="#43474C"
         app:cardCornerRadius="12dp"
         app:cardElevation="0dp"
         app:cardUseCompatPadding="false"
@@ -73,14 +73,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <com.example.sentimentanalysis.utility.FadingImageView
-            android:layout_width="160dp"
-            android:layout_height="131dp"
-            android:layout_gravity="end"
-            android:alpha="0.3"
-            android:scaleType="centerCrop"
-            android:src="@drawable/pokeball_white"
-            app:layout_constraintEnd_toEndOf="parent" />
+<!--        <com.example.sentimentanalysis.utility.FadingImageView-->
+<!--            android:layout_width="160dp"-->
+<!--            android:layout_height="131dp"-->
+<!--            android:layout_gravity="end"-->
+<!--            android:alpha="0.3"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/pokeball_white"-->
+<!--            app:layout_constraintEnd_toEndOf="parent" />-->
 
     </androidx.cardview.widget.CardView>
 

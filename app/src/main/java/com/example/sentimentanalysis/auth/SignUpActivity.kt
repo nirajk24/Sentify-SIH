@@ -1,4 +1,4 @@
-package com.example.sentimentanalysis
+package com.example.sentimentanalysis.auth
 
 import android.app.Dialog
 import android.content.Intent
@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import com.example.sentimentanalysis.sentiment.MainActivity
+import com.example.sentimentanalysis.R
 import com.example.sentimentanalysis.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -81,7 +83,7 @@ class SignUpActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     progressDialog.dismiss()
                     Toast.makeText(this@SignUpActivity,"Sign Up Successful",Toast.LENGTH_SHORT).show()
-                    val i =Intent(this@SignUpActivity,MainActivity::class.java)
+                    val i =Intent(this@SignUpActivity, MainActivity::class.java)
                     startActivity(i)
                     this@SignUpActivity.finish()
                 } else {

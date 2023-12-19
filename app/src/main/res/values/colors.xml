@@ -4,5 +4,11 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorPrimary">#ffbf00</color>
+<!--    <color name="colorPrimary">#1d9bf0</color>-->
+
+    <color name="background">#121212</color>
+
+    <color name="text_main">#EAEAEA</color>
+    <color name="text_secondary">#BCBCBC</color>
 
 </resources>

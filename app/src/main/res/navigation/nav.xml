@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/loginActivity">
+
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.sentimentanalysis.auth.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <activity
+        android:id="@+id/signUpActivity"
+        android:name="com.example.sentimentanalysis.auth.SignUpActivity"
+        android:label="activity_sign_up"
+        tools:layout="@layout/activity_sign_up" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.sentimentanalysis.sentiment.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/userDetailsActivity"
+        android:name="com.example.sentimentanalysis.sentiment.UserDetailsActivity"
+        android:label="activity_user_details"
+        tools:layout="@layout/activity_user_details" />
+</navigation>

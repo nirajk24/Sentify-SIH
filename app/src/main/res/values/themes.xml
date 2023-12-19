@@ -1,8 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Sentimentanalysis" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <item name="android:navigationBarColor">@color/background</item>
+    </style>
+    <style name="numberPickerTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <item name="colorAccent">@android:color/white</item>
+        <item name="colorControlNormal">@color/background</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:background">@color/background</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontFamily">@font/bungee</item>
+
     </style>
 
     <style name="Theme.Sentimentanalysis" parent="Base.Theme.Sentimentanalysis" />
