@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.sentimentanalysis.databinding.ActivityHashInputBinding
+import com.example.sentimentanalysis.sentiment.HashtagAnalysisActivity
 import com.example.sentimentanalysis.utility.DashboardPreferences
 
 class HashInputActivity : AppCompatActivity() {
@@ -13,6 +15,10 @@ class HashInputActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityHashInputBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        Glide.with(this)
+            .load(R.drawable.multiemotion)
+            .into(binding.ivBottomgif)
 
         binding.npNumber.minValue=0;
         binding.npNumber.maxValue=50

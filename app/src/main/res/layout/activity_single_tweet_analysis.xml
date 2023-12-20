@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <LinearLayout
@@ -64,33 +64,33 @@
                 android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginVertical="4dp"
-                android:src="@drawable/ic_launcher_background"/>
+                android:src="@drawable/twitter"/>
 
             <EditText
-                android:id="@+id/tvTweet"
+                android:id="@+id/etTweet"
                 android:layout_width="0dp"
-                android:layout_height="200dp"
+                android:layout_height="160dp"
                 android:layout_weight="1"
                 android:padding="8dp"
                 android:textColor="@color/white"
                 android:background="@drawable/et_border"
                 android:gravity="start"
-                android:textSize="13sp"
+                android:textSize="15sp"
                 android:hint="Type Something..."
-                android:textColorHint="#7C7C7C"
-                android:textStyle="bold" />
+                android:textColorHint="#7C7C7C" />
 
         </LinearLayout>
 
         <Button
+            android:id="@+id/btnAnalyze"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:text="Analyze"
             android:paddingHorizontal="32dp"
-            android:textColor="@color/white"
-            android:background="@drawable/round_corner_button"
+            android:textColor="@color/black"
+            android:background="@drawable/round_corner_button_yellow"
             android:layout_gravity="end"/>
 
         <LinearLayout
@@ -101,17 +101,210 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/ic_rectangle_10"/>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" >
+            android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/ivBottomgif"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:alpha="0.5"
+                android:src="@drawable/multiemotion" />
 
+            <LinearLayout
+                android:id="@+id/analysisLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
 
+                    <LinearLayout
+                        android:id="@+id/llEmotions"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_weight="1">
 
+                        <ImageView
+                            android:id="@+id/ivEmotions"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:layout_marginVertical="8dp"
+                            android:src="@drawable/twitter"/>
+
+                        <TextView
+                            android:id="@+id/tvEmotions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Joy"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/text_secondary"
+                        android:layout_marginVertical="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ivSentiment"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:alpha="0.6"
+                            android:layout_marginHorizontal="8dp"
+                            android:layout_marginVertical="8dp"
+                            android:src="@color/colorPrimary"/>
+
+                        <TextView
+                            android:id="@+id/tvSentiment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="67%"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="32dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvEmotion1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.3"
+                            android:layout_marginEnd="4dp"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:text="Joy"
+                            android:textSize="15dp" />
+
+                        <ImageView
+                            android:id="@+id/ivEmoji1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:singleLine="true"
+                            android:src="@drawable/anger" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/pb1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            app:trackCornerRadius="2dp"
+                            android:layout_weight="3"
+                            app:trackThickness="10dp"
+                            android:minHeight="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvEmotion2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.3"
+                            android:layout_marginEnd="4dp"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:text="Joy"
+                            android:textSize="15dp" />
+
+                        <ImageView
+                            android:id="@+id/ivEmoji2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:singleLine="true"
+                            android:src="@drawable/anger" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/pb2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            app:trackCornerRadius="2dp"
+                            android:layout_weight="3"
+                            app:trackThickness="10dp"
+                            android:minHeight="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvEmotion3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.3"
+                            android:layout_marginEnd="4dp"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:text="Joy"
+                            android:textSize="15dp" />
+
+                        <ImageView
+                            android:id="@+id/ivEmoji3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:singleLine="true"
+                            android:src="@drawable/joy" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/pb3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            app:trackCornerRadius="2dp"
+                            app:trackThickness="10dp"
+                            android:layout_weight="3"
+                            android:minHeight="10dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.anychart.AnyChartView
+                    android:id="@+id/sentiment_bar_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
         </LinearLayout>
+
+
     </LinearLayout>
-</ScrollView>
+</LinearLayout>

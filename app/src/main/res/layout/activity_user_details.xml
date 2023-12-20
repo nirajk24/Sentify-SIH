@@ -21,6 +21,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tvLoadingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_secondary"
+        android:textStyle="bold"
+        android:fontFamily="@font/bungee"
+        android:text="Hold On!! Analyzing \nyour profile..."
+        android:textAlignment="center"
+        android:layout_marginBottom="160dp"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mainLayout"
         android:layout_width="match_parent"
@@ -68,7 +83,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cvProfileCard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="130dp"
             android:backgroundTint="@color/background"
             app:cardElevation="0dp"
             android:layout_marginTop="-8dp"
@@ -84,15 +99,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvProfilePic"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     app:layout_constraintDimensionRatio="1:1"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     app:cardElevation="10dp"
                     app:cardCornerRadius="200dp"
-                    app:layout_constraintEnd_toStartOf="@id/userStats"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
@@ -105,78 +119,78 @@
                         android:layout_height="match_parent" />
                 </androidx.cardview.widget.CardView>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/userStats"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="24dp"
-                    android:elevation="10dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/cvProfilePic"
-                    app:layout_constraintTop_toTopOf="@id/cvProfilePic">
-
-                    <TextView
-                        android:id="@+id/tvPokemonCollected"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Profile Score"
-                        android:textColor="@color/white"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:textSize="18sp"
-                        android:singleLine="true"/>
-
-
-                    <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:id="@+id/pbPokemonCollected"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        app:trackCornerRadius="8dp"
-                        android:layout_weight="3"
-                        android:layout_marginTop="10dp"
-                        app:trackThickness="8dp"
-                        app:trackColor="#838A8A8A"
-                        android:max="100"
-                        android:progress="54"
-                        app:layout_constraintTop_toBottomOf="@id/tvPokemonCollected"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:minHeight="10dp" />
-
-
-                    <TextView
-                        android:id="@+id/tvCollectedProgress"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="51/100"
-                        android:textSize="16sp"
-                        android:layout_marginTop="4dp"
-                        android:textColor="@color/white"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/pbPokemonCollected"
-                        android:singleLine="true"/>
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
                 <TextView
-                    android:id="@+id/tvUsername"
+                    android:id="@+id/tvRealName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="8dp"
+                    android:elevation="10dp"
                     android:singleLine="true"
                     android:text="UserName"
-                    android:textColor="@color/white"
                     android:textAlignment="viewStart"
-                    android:textSize="22sp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="16dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/cvProfilePic"
+                    app:layout_constraintTop_toTopOf="@+id/cvProfilePic" />
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:elevation="10dp"
-                    android:textStyle="bold"
-                    app:layout_constraintTop_toBottomOf="@id/userStats"
-                    app:layout_constraintBottom_toBottomOf="@id/cvProfilePic"
-                    app:layout_constraintStart_toStartOf="@id/userStats"/>
+                    android:singleLine="true"
+                    android:text="\@UserName"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="16sp"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintStart_toStartOf="@+id/tvRealName"
+                    app:layout_constraintTop_toBottomOf="@id/tvRealName" />
+
+                <TextView
+                    android:id="@+id/tvTotalTweets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="10dp"
+                    android:singleLine="true"
+                    android:text="Total Tweets Used"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="16sp"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintStart_toStartOf="@+id/tvUserName"
+                    app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnToDashBoard"
+                    android:layout_width="wrap_content"
+                    android:backgroundTint="#474747"
+                    app:cardCornerRadius="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="16dp"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_next"
+                        android:drawablePadding="4dp"
+                        android:layout_marginVertical="4dp"
+                        android:layout_gravity="center|center_vertical"
+                        android:layout_marginStart="12dp"
+                        android:textColor="@color/white"
+                        android:layout_marginEnd="8dp"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:text="Dashboard"
+                        android:drawableTint="@color/white"/>
+                </androidx.cardview.widget.CardView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 

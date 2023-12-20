@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">sentimentanalysis</string>
+    <string name="app_name">Sentify</string>
     <string name="your_web_client_id">459225185400-bbtupg6t50b2kt53dpgef822811mi9ru.apps.googleusercontent.com</string>
 
     <string name="demo_tweet">Impressive visit to the

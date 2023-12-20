@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:fontFamily="@font/bungee"
-            android:text="@"
+            android:text="#"
             android:textColor="@color/colorPrimary"
             android:textSize="40sp" />
         <com.google.android.material.textfield.TextInputLayout

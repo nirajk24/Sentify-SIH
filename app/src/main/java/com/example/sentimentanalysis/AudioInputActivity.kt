@@ -7,6 +7,7 @@ import android.icu.text.Collator.getDisplayName
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore.Video.Media
 import android.provider.OpenableColumns
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -23,9 +24,10 @@ class AudioInputActivity : AppCompatActivity() {
     private val PICK_AUDIO_REQUEST = 1
     private val PERMISSION_REQUEST = 2
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
+
+    private lateinit var audioFile : Media
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //binding
         binding = ActivityAudioInputBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -35,6 +37,7 @@ class AudioInputActivity : AppCompatActivity() {
             .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
             .into(binding.ivBottomgif)
 
+
         requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {
                 openFilePicker()
@@ -42,7 +45,7 @@ class AudioInputActivity : AppCompatActivity() {
         }
 
         //audio upload
-        binding.btnGo.setOnClickListener {
+        binding.etAudio.setOnClickListener {
             if (checkPermission()) {
                 openFilePicker()
             } else {
@@ -54,8 +57,7 @@ class AudioInputActivity : AppCompatActivity() {
 
 
 
-
-private fun checkPermission():Boolean {
+    private fun checkPermission():Boolean {
     val readStoragePermission = ContextCompat.checkSelfPermission(this,android.Manifest.permission.READ_EXTERNAL_STORAGE)
     return readStoragePermission == PackageManager.PERMISSION_GRANTED
 }

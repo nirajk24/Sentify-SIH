@@ -17,6 +17,20 @@ object Constants {
         "disgust" to R.drawable.disgust
     )
 
+    val EMOTION_MAP_TO_GIF_CAPS = mapOf<String, Int>(
+        "Anger" to R.drawable.anger,
+        "Fear" to R.drawable.fear,
+        "Joy" to R.drawable.joy,
+        "Love" to R.drawable.love,
+        "Sadness" to R.drawable.sad,
+        "Surprise" to R.drawable.surprise,
+        "Optimism" to R.drawable.optimism,
+        "Pessimism" to R.drawable.pessimism,
+        "Anticipation" to R.drawable.anticipate,
+        "Trust" to R.drawable.trust,
+        "Disgust" to R.drawable.disgust
+    )
+
     val NUMBER_MAP_TO_EMOTION = mapOf<Int, String>(
         0 to "anger",
         1 to "fear",

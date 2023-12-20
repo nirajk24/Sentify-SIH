@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -15,6 +16,7 @@ import com.example.sentimentanalysis.databinding.ActivityUserDetailsBinding
 import com.example.sentimentanalysis.dataclass.TweetResponse
 import com.example.sentimentanalysis.dataclass.TwitterAnalysis
 import com.example.sentimentanalysis.retrofit.RetrofitInstance
+import com.google.gson.Gson
 import org.json.JSONObject
 
 class UserDetailsActivity : AppCompatActivity() {
@@ -38,6 +40,7 @@ class UserDetailsActivity : AppCompatActivity() {
             .load(R.drawable.ic_loading)
             .into(binding.ivLoading)
 
+
         val bundle = intent.extras
         if (bundle != null) {
             username = bundle.getString("username")!!
@@ -53,8 +56,11 @@ class UserDetailsActivity : AppCompatActivity() {
     }
 
     private fun goToDashboard() {
-        binding.tvUsername.setOnClickListener {
+        binding.btnToDashBoard.setOnClickListener {
             val intent = Intent(this, ProfileDashboardActivity::class.java)
+            val gson = Gson()
+            val tweetJson = gson.toJson(tweetResponse)
+            intent.putExtra("TWEET_RESPONSE_KEY", tweetJson)
             startActivity(intent)
         }
     }
@@ -79,15 +85,14 @@ class UserDetailsActivity : AppCompatActivity() {
                             Log.d("APIDATA", result.toString())
                         }
                     } else {
-                        val err = response.errorBody()?.string()
-                        val data = JSONObject(err.toString()).getString("error")
-                        Log.d("APIDATA", data.toString())
-//                        Toast.makeText(this@MainActivity,data.toString(),Toast.LENGTH_SHORT).show()
+//                        val err = response.errorBody()?.string()
+//                        val data = JSONObject(err.toString()).getString("error")
+//                        Log.d("APIDATA", data.toString())
+                        Toast.makeText(this@UserDetailsActivity, response.message().toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 override fun onFailure(call: retrofit2.Call<TweetResponse?>, t: Throwable) {
-                    println(t.message)
                     Log.d("APIDATA", "Response Failure")
                     Log.d("APIDATA", t.message.toString())
                 }
@@ -97,7 +102,14 @@ class UserDetailsActivity : AppCompatActivity() {
 
     private fun initializeData() {
         binding.ivLoading.visibility = View.GONE
+        binding.tvLoadingText.visibility = View.GONE
         binding.mainLayout.visibility = View.VISIBLE
+
+        binding.apply {
+            tvUserName.text = username
+            tvTotalTweets.text = "Total Tweets: ${number}"
+            tvRealName.text = tweetResponse.tweet[0].user.name
+        }
 
         Glide.with(this)
             .load(tweetResponse.tweet[0].user.avatar)
@@ -120,6 +132,7 @@ class UserDetailsActivity : AppCompatActivity() {
             adapter = tweetsAdapter
             layoutManager = LinearLayoutManager(this@UserDetailsActivity, LinearLayoutManager.VERTICAL, false)
             setHasFixedSize(true)
+//            setItemViewCacheSize(50)
         }
     }
 
