@@ -51,7 +51,7 @@
                             android:layout_height="wrap_content"
                             android:text="Real Name"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
+                            android:textSize="15sp"
                             android:textStyle="bold"/>
 
                         <TextView
@@ -69,9 +69,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="8dp"
-                    android:textSize="14dp"
+                    android:textSize="14.5dp"
                     android:textColor="@color/text_main"
                     android:text="@string/demo_tweet"/>
+
+                <ImageView
+                    android:id="@+id/ivTweetImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:maxHeight="100dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_image"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -172,6 +182,61 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/ivEmotions"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="8dp"
+                    android:src="@drawable/twitter"/>
+
+                <TextView
+                    android:id="@+id/tvEmotions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Joy"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/text_secondary"
+                android:layout_marginVertical="8dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/ivSentiment"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="8dp"
+                    android:src="@drawable/twitter"/>
+
+                <TextView
+                    android:id="@+id/tvSentiment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="67%"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
 
 
 

@@ -52,11 +52,11 @@ class MainAdapter() : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val currentFeature = differ.currentList[position]
 
-//        Glide.with(holder.itemView)
-//            .load(currentFeature.mainFeaturesImage)
-//            .apply(RequestOptions().downsample(DownsampleStrategy.AT_MOST))
-//            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-//            .into(holder.binding.ivMainThumb)
+        Glide.with(holder.itemView)
+            .load(currentFeature.mainFeaturesImage)
+            .apply(RequestOptions().downsample(DownsampleStrategy.AT_MOST))
+            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+            .into(holder.binding.ivMainThumb)
         holder.binding.apply {
             tvHeading.text = currentFeature.mainFeaturesHeading
             tvMainID.text = currentFeature.position
