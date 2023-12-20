@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:requestLegacyExternalStorage="true"/>
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:requestLegacyExternalStorage="true" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:requestLegacyExternalStorage="true"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:requestLegacyExternalStorage="true" />
 
     <application
         android:allowBackup="true"
@@ -20,6 +22,10 @@
         android:theme="@style/Theme.Sentimentanalysis"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".VideoViewActivity"
+            android:exported="false" />
+
         <activity
             android:name=".ProfileDashboardActivity"
             android:exported="false" />
@@ -55,8 +61,8 @@
             android:exported="true" />
         <activity
             android:name=".AudioInputActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
+
 
 
         <meta-data

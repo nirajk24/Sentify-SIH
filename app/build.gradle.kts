@@ -37,6 +37,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding= true
     }
 }
 
@@ -75,5 +76,8 @@ dependencies {
 
     // MPAndroid Chart
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
+
 
 }
