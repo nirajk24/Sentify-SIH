@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InputActivity"
-    android:background="@color/background">
+    tools:context=".AudioInputActivity"
+    android:background="@color/black">
     <LinearLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:padding="16dp"
+            android:padding="20dp"
             android:elevation="4dp"
             android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,19 +30,19 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="60dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Profile Analysis"
-            android:textAlignment="center"
-            android:textColor="@color/white"
+            android:text="Hashtag Analysis"
             android:textSize="26sp"
+            android:layout_marginEnd="60dp"
+            android:fontFamily="@font/poppins_medium"
             android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/ivBack" />
-  </LinearLayout>
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
@@ -58,10 +58,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Discover Your Twitter Impact"
+            android:text="Sought After by Many"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="32sp" />
+            android:textSize="30sp" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/ll2"
@@ -71,55 +71,98 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll1"
+        android:background="@color/background"
         android:layout_margin="8dp"
         >
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/audio_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidth="0.8dp"
+            app:hintTextColor="@color/white"
+            android:layout_margin="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAudio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_music"
+                android:drawablePadding="20dp"
+                android:hint="Audio"
+                android:background="@color/cardview_dark_background"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnupload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UPLOAD"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:elevation="4dp"
+            android:stateListAnimator="@null"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            style="@style/Widget.AppCompat.Button" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:fontFamily="@font/bungee"
-            android:text="@"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
 
-            android:textColor="@color/colorPrimary"
-            android:textSize="40sp" />
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailLayout"
+            android:id="@+id/desc_Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
             app:boxStrokeColor="@color/white"
-            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidth="0.8dp"
             app:hintTextColor="@color/white"
-            android:padding="8dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_weight="1"
             >
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etUID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_bold"
-            android:textSize="28dp"
-            android:textColor="@color/white"
-            android:textAlignment="center"
-            />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_description"
+                android:drawablePadding="27dp"
+                android:hint="Description"
+                android:textColor="@color/white"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:maxLines="4"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:required="true"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ll3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll2"
-        android:layout_margin="16dp"
-        >
-        <NumberPicker
-            android:id="@+id/npNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/numberPickerTheme"
-            />
+
+
     </LinearLayout>
 
     <Button
@@ -129,7 +172,7 @@
         android:layout_margin="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll3"
+        app:layout_constraintTop_toBottomOf="@id/ll2"
 
         android:textColor="@color/white"
         android:background="@drawable/round_corner_button_yellow"
@@ -142,7 +185,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnGo"
-
+        android:gravity="center"
         android:orientation="horizontal">
 
         <ImageView
@@ -153,10 +196,6 @@
             android:src="@drawable/multiemotion" />
 
     </LinearLayout>
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

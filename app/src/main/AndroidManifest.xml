@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +18,9 @@
         android:theme="@style/Theme.Sentimentanalysis"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
         <activity
             android:name=".sentiment.UserDetailsActivity"
             android:exported="false" />
@@ -29,16 +35,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".sentiment.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InputActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AudioInputActivity"
             android:exported="true">
-
-        </activity>
-        <activity android:name=".InputActivity"
-            android:exported="true">
-
 
         </activity>
 
