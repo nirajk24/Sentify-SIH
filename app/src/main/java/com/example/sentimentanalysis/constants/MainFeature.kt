@@ -38,6 +38,13 @@ val singleTweetAnalysis = MainFeature(
     mainFeaturesImage = R.drawable.twitter
 )
 
+val speechAnalysis = MainFeature(
+    mainFeaturesHeading = "Speech Analysis",
+    mainFeaturesCatchyPhrase = "Analyze the Sentiments in Your Voice",
+//    mainFeaturesImage = R.drawable.ic_speech_analysis
+    mainFeaturesImage = R.drawable.twitter
+)
+
 // Create a list of the main features
-val mainFeaturesList = listOf(userProfileAnalysis, hashtagAnalysis, rephrasingTweets, singleTweetAnalysis)
-val mainFeaturesHeading = mapOf<String, String>("1" to "User Profile Analysis", "2" to "Hashtag Analysis", "3" to "Sentify Tweets", "4" to "")
+val mainFeaturesList = listOf(userProfileAnalysis, hashtagAnalysis, rephrasingTweets, singleTweetAnalysis, speechAnalysis)
+//val mainFeaturesHeading = mapOf<String, String>("1" to "User Profile Analysis", "2" to "Hashtag Analysis", "3" to "Sentify Tweets", "4" to "")

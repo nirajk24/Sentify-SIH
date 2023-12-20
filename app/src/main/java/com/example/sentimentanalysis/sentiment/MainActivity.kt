@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sentimentanalysis.AudioInputActivity
 import com.example.sentimentanalysis.HashInputActivity
 import com.example.sentimentanalysis.InputActivity
 import com.example.sentimentanalysis.adapter.MainAdapter
@@ -55,6 +56,13 @@ class MainActivity : AppCompatActivity() {
                 3 -> {
 
                 }
+                4 -> {
+                    // Speech
+                    val intent = Intent(this, AudioInputActivity::class.java)
+                    startActivity(intent)
+                }
+
+
                 else -> {
                     // Do nothing
                 }

@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:requestLegacyExternalStorage="true"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:requestLegacyExternalStorage="true"/>
 
     <application
         android:allowBackup="true"
@@ -25,6 +30,9 @@
             android:name=".HashtagAnalysisActivity"
             android:exported="false" />
         <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".sentiment.UserDetailsActivity"
             android:exported="false" />
         <activity
@@ -45,6 +53,11 @@
         <activity
             android:name=".InputActivity"
             android:exported="true" />
+        <activity
+            android:name=".AudioInputActivity"
+            android:exported="true">
+        </activity>
+
 
         <meta-data
             android:name="preloaded_fonts"
