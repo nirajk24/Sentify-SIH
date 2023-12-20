@@ -16,7 +16,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#292929"
+            android:backgroundTint="@color/card_background"
             app:cardCornerRadius="8dp">
 
             <LinearLayout
@@ -80,10 +80,12 @@
                     android:maxHeight="100dp"
                     android:layout_marginHorizontal="8dp"
                     android:layout_marginTop="8dp"
+                    android:visibility="gone"
                     android:scaleType="centerCrop"
                     android:src="@drawable/bg_image"/>
 
                 <TextView
+                    android:id="@+id/tvTweetTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="8dp"
@@ -108,7 +110,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tvrepostCount"
+                        android:id="@+id/tvRetweetCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="485"
@@ -118,7 +120,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=" Reposts"
+                        android:text=" Retweets"
                         android:layout_marginEnd="10dp"
                         android:textSize="13dp"
                         android:textColor="@color/text_secondary"/>
@@ -166,7 +168,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=" Bookmarks"
+                        android:text=" Comments"
                         android:layout_marginEnd="10dp"
                         android:textSize="13dp"
                         android:textColor="@color/text_secondary"/>

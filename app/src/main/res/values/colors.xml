@@ -10,5 +10,6 @@
 
     <color name="text_main">#EAEAEA</color>
     <color name="text_secondary">#BCBCBC</color>
+    <color name="card_background">#292929</color>
 
 </resources>

@@ -14,7 +14,6 @@ import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.sentimentanalysis.databinding.ActivityAudioInputBinding
-import com.example.sentimentanalysis.databinding.ActivityMainBinding
 import java.io.File
 import java.io.FileOutputStream
 
@@ -91,7 +90,6 @@ private fun requestPermissions() {
                 it.getString(nameIndex)
             } ?: ""
         }
-
 
         private fun getAudioPath(uri: Uri): String {
             var path = ""

@@ -1,4 +1,4 @@
-package com.example.sentimentanalysis.sentiment
+package com.example.sentimentanalysis
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,63 +6,51 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.example.sentimentanalysis.ProfileDashboardActivity
-import com.example.sentimentanalysis.R
 import com.example.sentimentanalysis.adapter.TweetsAdapter
-import com.example.sentimentanalysis.databinding.ActivityUserDetailsBinding
+import com.example.sentimentanalysis.databinding.ActivityHashtagAnalysisBinding
 import com.example.sentimentanalysis.dataclass.TweetResponse
 import com.example.sentimentanalysis.dataclass.TwitterAnalysis
 import com.example.sentimentanalysis.retrofit.RetrofitInstance
 import org.json.JSONObject
 
-class UserDetailsActivity : AppCompatActivity() {
+class HashtagAnalysisActivity : AppCompatActivity() {
 
-    private val binding : ActivityUserDetailsBinding by lazy {
-        ActivityUserDetailsBinding.inflate(layoutInflater)
+    private val binding : ActivityHashtagAnalysisBinding by lazy {
+        ActivityHashtagAnalysisBinding.inflate(layoutInflater)
     }
 
     private lateinit var tweetsAdapter: TweetsAdapter
-
     private lateinit var tweetResponse: TweetResponse
 
-    private var username = ""
+    private var hashtag = ""
     private var number = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        Glide.with(this)
-            .load(R.drawable.ic_loading)
-            .into(binding.ivLoading)
-
         val bundle = intent.extras
         if (bundle != null) {
-            username = bundle.getString("username")!!
+            hashtag = bundle.getString("hashtag")!!
             number = bundle.getInt("number")
         }
 
-        apiCall()
         setRecyclerView()
         onBackClick()
 
-
+        apiCall()
         goToDashboard()
     }
 
     private fun goToDashboard() {
-        binding.tvUsername.setOnClickListener {
+        binding.tvHashtag.setOnClickListener {
             val intent = Intent(this, ProfileDashboardActivity::class.java)
             startActivity(intent)
         }
     }
 
     private fun apiCall() {
-        Log.d("APIDATA", username)
-        Log.d("APIDATA", number.toString())
-        val twitterAnalysis = TwitterAnalysis(username, "user", number)
+        val twitterAnalysis = TwitterAnalysis(hashtag, "hashtag", number)
         RetrofitInstance.api.getTwitterAnalysis(twitterAnalysis).enqueue(
             object : retrofit2.Callback<TweetResponse?> {
                 override fun onResponse(
@@ -99,13 +87,24 @@ class UserDetailsActivity : AppCompatActivity() {
         binding.ivLoading.visibility = View.GONE
         binding.mainLayout.visibility = View.VISIBLE
 
-        Glide.with(this)
-            .load(tweetResponse.tweet[0].user.avatar)
-//            .apply(RequestOptions().downsample(DownsampleStrategy.AT_MOST))
-            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-            .into(binding.ivProfilePic)
+        binding.tvHashtag.text = hashtag
+
+//        Glide.with(this)
+//            .load(tweetResponse.tweet[0].user.avatar)
+////            .apply(RequestOptions().downsample(DownsampleStrategy.AT_MOST))
+//            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+//            .into(binding.ivProfilePic)
 
         tweetsAdapter.differ.submitList(tweetResponse.tweet)
+    }
+
+    private fun setRecyclerView() {
+        tweetsAdapter = TweetsAdapter()
+        binding.rvTweets.apply {
+            adapter = tweetsAdapter
+            layoutManager = LinearLayoutManager(this@HashtagAnalysisActivity, LinearLayoutManager.VERTICAL, false)
+            setHasFixedSize(true)
+        }
     }
 
     private fun onBackClick() {
@@ -113,15 +112,5 @@ class UserDetailsActivity : AppCompatActivity() {
             onBackPressed()
         }
     }
-
-    private fun setRecyclerView() {
-        tweetsAdapter = TweetsAdapter()
-        binding.rvTweets.apply {
-            adapter = tweetsAdapter
-            layoutManager = LinearLayoutManager(this@UserDetailsActivity, LinearLayoutManager.VERTICAL, false)
-            setHasFixedSize(true)
-        }
-    }
-
 
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InputActivity"
+    tools:context=".HashInputActivity"
     android:background="@color/background">
     <LinearLayout
         android:id="@+id/appBar"
@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Profile Analysis"
+            android:text="Hashtag Analysis"
             android:textSize="26sp"
             android:layout_marginEnd="60dp"
             android:fontFamily="@font/poppins_medium"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Discover Your Twitter Impact"
+            android:text="Sought After by Many"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp" />
@@ -92,15 +92,15 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_weight="1"
             >
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etUID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_bold"
-            android:textSize="28dp"
-            android:textColor="@color/white"
-            android:textAlignment="center"
-            />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="28dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -111,7 +111,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll2"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         >
         <NumberPicker
             android:id="@+id/npNumber"
@@ -152,4 +152,6 @@
             android:src="@drawable/multiemotion" />
 
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
