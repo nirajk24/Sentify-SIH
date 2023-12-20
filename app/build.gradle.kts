@@ -38,8 +38,8 @@ android {
     buildFeatures {
         viewBinding = true
     }
-
 }
+
 
 dependencies {
 
@@ -69,5 +69,11 @@ dependencies {
 
     // Circle Image
     implementation("de.hdodenhof:circleimageview:3.1.0")
+
+    // Any Chart
+    implementation("com.github.AnyChart:AnyChart-Android:1.1.5")
+
+    // MPAndroid Chart
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 
 }

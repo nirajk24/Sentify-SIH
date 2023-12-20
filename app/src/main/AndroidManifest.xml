@@ -16,6 +16,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ProfileDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HashInputActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HashtagAnalysisActivity"
+            android:exported="false" />
+        <activity
             android:name=".sentiment.UserDetailsActivity"
             android:exported="false" />
         <activity
@@ -29,18 +38,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".sentiment.MainActivity"
-            android:exported="true">
-
-        </activity>
-        <activity android:name=".InputActivity"
-            android:exported="true">
-
-
-        </activity>
+            android:exported="true" />
+        <activity
+            android:name=".InputActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
