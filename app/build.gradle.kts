@@ -78,5 +78,7 @@ dependencies {
 
     // Audio Picker
 //    implementation("com.github.majidarabi:AndroidFilePicker:v0.2.2")
+    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
+
 
 }

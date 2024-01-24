@@ -38,6 +38,15 @@ val singleTweetAnalysis = MainFeature(
     mainFeaturesCatchyPhrase = "Insight into Every Tweet's Emotional Core",
 //    mainFeaturesImage = R.drawable.single_tweet_analysis_icon,
     mainFeaturesImage = R.drawable.individual_tweet_pic,
+    "#003"
+)
+
+
+val videoAnalysis = MainFeature(
+    mainFeaturesHeading = "Youtube Shorts Analysis",
+    mainFeaturesCatchyPhrase = "Check what your Shorts says",
+//    mainFeaturesImage = R.drawable.single_tweet_analysis_icon,
+    mainFeaturesImage = R.drawable.youtube,
     "#004"
 )
 
@@ -49,5 +58,5 @@ val speechAnalysis = MainFeature(
     "#005"
 )
 
-val mainFeaturesList = listOf(userProfileAnalysis, hashtagAnalysis, rephrasingTweets, singleTweetAnalysis)
+val mainFeaturesList = listOf(userProfileAnalysis, hashtagAnalysis, singleTweetAnalysis, videoAnalysis)
 

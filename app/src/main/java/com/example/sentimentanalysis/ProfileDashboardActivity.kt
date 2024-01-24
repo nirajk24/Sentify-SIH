@@ -38,6 +38,7 @@ class ProfileDashboardActivity : AppCompatActivity() {
 
         setUpSentimentDistributionChart()
         setUpEmotionDistributionChart()
+       setUpEmotionDistributionChart()
 
         setUpEmotionWeightChart()
         setUpSentimentWeightChart()
@@ -52,7 +53,7 @@ class ProfileDashboardActivity : AppCompatActivity() {
         val vertical: Cartesian = AnyChart.vertical()
 
         vertical.animation(true)
-            .title("Vertical Combination of Bar and Jump Line Chart")
+            .title("Sentiment Weight Chart")
 
         val data: MutableList<DataEntry> = ArrayList()
 
@@ -109,7 +110,7 @@ class ProfileDashboardActivity : AppCompatActivity() {
         val vertical: Cartesian = AnyChart.vertical()
 
         vertical.animation(true)
-            .title("Vertical Combination of Bar and Jump Line Chart")
+            .title("Emotion Weight Chart")
 
         val data: MutableList<DataEntry> = ArrayList()
 
@@ -185,7 +186,6 @@ class ProfileDashboardActivity : AppCompatActivity() {
     }
 
     private fun setUpEmotionDistributionChart() {
-
         APIlib.getInstance().setActiveAnyChartView(binding.emotionDistributionPieChart);
         val pie = AnyChart.pie()
         val data: MutableList<DataEntry> = ArrayList()
@@ -264,7 +264,7 @@ class ProfileDashboardActivity : AppCompatActivity() {
     }
 
 
-    private class CustomDataEntry(x: String?, value: Number?, jumpLine: Number?) :
+    class CustomDataEntry(x: String?, value: Number?, jumpLine: Number?) :
         ValueDataEntry(x, value) {
         init {
             setValue("jumpLine", jumpLine)

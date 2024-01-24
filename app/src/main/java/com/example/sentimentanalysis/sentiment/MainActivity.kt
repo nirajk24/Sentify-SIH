@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sentimentanalysis.AudioInputActivity
 import com.example.sentimentanalysis.HashInputActivity
 import com.example.sentimentanalysis.InputActivity
+import com.example.sentimentanalysis.VideoAnalysisActivity
 import com.example.sentimentanalysis.adapter.MainAdapter
 import com.example.sentimentanalysis.auth.LoginActivity
 import com.example.sentimentanalysis.databinding.ActivityMainBinding
@@ -65,11 +66,12 @@ class MainActivity : AppCompatActivity() {
                 }
                 2 -> {
                     // Analytics
-                }
-                3 -> {
                     val intent = Intent(this, SingleTweetAnalysisActivity::class.java)
                     startActivity(intent)
-
+                }
+                3 -> {
+                    val intent = Intent(this, VideoAnalysisActivity::class.java)
+                    startActivity(intent)
                 }
                 4 -> {
                     // Speech

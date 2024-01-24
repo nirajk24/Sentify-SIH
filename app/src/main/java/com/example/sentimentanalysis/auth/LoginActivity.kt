@@ -13,7 +13,7 @@ import com.example.sentimentanalysis.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.firebase.auth.FirebaseAuth
 
-class LoginActivity : AppCompatActivity() {
+class  LoginActivity : AppCompatActivity() {
     private lateinit var progressDialog:Dialog
     private lateinit var dialogText: TextView
     private lateinit var binding:ActivityLoginBinding
