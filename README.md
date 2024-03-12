@@ -1,99 +1,72 @@
 # Sentiment Analysis Android App
 
-Welcome to the README file for the Sentiment Analysis Android app built with Kotlin. This app leverages sentiment analysis on Twitter profiles and posts using Nitter to scrape tweets and ML models to provide a comprehensive dashboard about emotions and sentiments. Additionally, it includes a feature to analyze the sentiment and emotion of any sentence. The app uses Anygraph library to draw graphs for better visualization.
-
-![Sentiment Analysis App Screenshots](Images/screenshot_main.jpg)
-
-## Table of Contents
-
-- [About the Project](#about-the-project)
-  - [Features](#features)
-  - [Screenshots](#screenshots)
-- [Tech Stack](#tech-stack)
-  - [Backend](#backend)
-  - [Frontend](#frontend)
-- [Architecture](#architecture)
-- [Usage](#usage)
-- [License](#license)
-- [Contact](#contact)
+Welcome to the README file for the Sentiment Analysis Android app built with Kotlin. This app is a powerful tool designed to provide users with deep insights into the sentiments and emotions expressed on Twitter. Leveraging cutting-edge technologies such as [Nitter](https://github.com/zedeus/nitter) for tweet scraping and machine learning models for sentiment analysis, this app offers a comprehensive dashboard to visualize emotional trends and sentiments. Additionally, it provides a feature to analyze the sentiment and emotion of any custom sentence, further extending its utility. The app also employs the [Anygraph](https://github.com/anychart/AnyChart-Android) library to draw visually appealing graphs for better data representation and user engagement.
 
 ## About the Project
 
-The Sentiment Analysis Android app is designed to provide users with insights into the sentiments and emotions expressed in Twitter profiles, posts, and custom sentences. By utilizing Nitter to scrape tweets and ML models for sentiment analysis, the app offers a comprehensive dashboard to visualize emotions and sentiments in a user-friendly manner.
+The Sentiment Analysis Android app is meticulously crafted to offer users an immersive experience in understanding the emotions and sentiments prevalent across Twitter profiles, posts, and custom sentences. By harnessing the capabilities of Nitter for tweet scraping and sophisticated ML models for sentiment analysis, the app delivers a sophisticated dashboard that enables users to explore emotional nuances with ease and clarity.
 
 ### Features
 
-- Analyze sentiments and emotions in Twitter profiles and posts.
-- Utilize Nitter to scrape tweets from user profiles or trending hashtags.
-- Generate comprehensive dashboards with graphs illustrating sentiment trends.
-- Perform sentiment analysis on custom sentences for immediate insights.
-- Visualize sentiment and emotion analysis results using Anygraph library.
-- Switch between light and dark themes for a personalized user experience.
+- **Twitter Sentiment Analysis:** Analyze sentiments and emotions within Twitter profiles and posts.
+- **Nitter Integration:** Utilize Nitter to scrape tweets from user profiles or trending hashtags, ensuring comprehensive data coverage.
+- **Comprehensive Dashboard:** Generate detailed dashboards with intuitive graphs illustrating sentiment trends for deeper insights.
+- **Custom Sentence Analysis:** Perform sentiment analysis on custom sentences to gain immediate insights into emotional tones.
+- **Interactive Visualizations:** Visualize sentiment and emotion analysis results using the dynamic capabilities of the Anygraph library.
+- **Personalized Themes:** Switch between light and dark themes to tailor the user experience according to preferences.
 
 ### Screenshots
 
-Here are some screenshots showcasing the app's user interface and features:
-
-![Screenshot 1](/Images/screenshot_light.jpg)
-<p align="center"><i>Light Mode - Dashboard</i></p>
-
-![Screenshot 2](/Images/screenshot_dark.jpg)
-<p align="center"><i>Dark Mode - Sentiment Analysis</i></p>
+Explore the app's user interface and features through these captivating screenshots:
+<div>
+  <img src="/preview/S2.jpg" alt="Screenshot 1" width="160" />
+  <img src="/preview/S1.jpg" alt="Screenshot 2" width="160" />
+  <img src="/preview/S10.jpg" alt="Screenshot 3" width="160" />
+  <img src="/preview/S8.jpg" alt="Screenshot 4" width="160" />
+  <img src="/preview/S13.jpg" alt="Screenshot 3" width="160" />
+  <br><br>
+  <img src="/preview/S12.jpg" alt="Screenshot 4" width="160" />
+  <img src="/preview/S9.jpg" alt="Screenshot 5" width="160" />
+  <img src="/preview/S3.jpg" alt="Screenshot 4" width="160" />
+  <img src="/preview/S11.jpg" alt="Screenshot 5" width="160" />
+  <img src="/preview/S5.jpg" alt="Screenshot 4" width="160" />
+</div>
 
 ## Tech Stack
-
-### Backend
-
-- **Data Scraping:** Nitter is used for scraping tweets from user profiles or trending hashtags.
-- **Machine Learning Model:** ML models are employed for sentiment and emotion analysis of tweets.
-- **Graph Visualization:** Anygraph library is utilized to draw graphs for a more intuitive representation of sentiment trends.
-- **API:** The backend API handles data processing and communication between the app and ML models.
 
 ### Frontend
 
 - **Language:** Kotlin
-- **Architecture:** MVVM (Model-View-ViewModel) pattern for clean separation of concerns.
-- **Network Calls:** Retrofit library for efficient API calls and data loading.
+- **Network Calls:** [Retrofit](https://square.github.io/retrofit/) library for efficient API calls and data loading.
 - **UI Components:** 
   - RecyclerView: Displays scraped tweets and sentiment analysis results.
   - Anygraph: Draws interactive graphs for visualizing sentiment trends.
   - Material Components: Consistent UI elements and themes for an appealing look and feel.
 - **Asynchronous Operations:** Coroutines for handling asynchronous tasks efficiently.
 
-## Architecture
+### Backend
 
-The Sentiment Analysis Android app follows the MVVM (Model-View-ViewModel) architectural pattern, providing a modular structure for efficient development and maintenance. This pattern divides the app into three distinct components:
+- **Data Scraping:** Nitter is used for scraping tweets from user profiles or trending hashtags.
+- **Machine Learning:** [TensorFlow](https://www.tensorflow.org/) framework for building and training deep learning models for sentiment analysis.
+- **Web Framework:** [Flask](https://flask.palletsprojects.com/) is employed for building the backend of the application.
+- **Graph Visualization:** Anygraph library is utilized to draw graphs for a more intuitive representation of sentiment trends.
+- **API:** The backend API handles data processing and communication between the app and ML models.
 
-- **Model:** Manages data and business logic, including ML models for sentiment analysis, data structures, and repositories crucial for app functionality.
+For more details, visit the original [Backend Repository](https://github.com/Subodh7976/Sentify/tree/main).
 
-- **View:** Presents user interface elements and handles user interactions. Screens, themes, and animations are managed within the View component.
+## Clone and Installation
 
-- **ViewModel:** Acts as a bridge between the Model and the View, holding UI-related data and logic. This facilitates communication between components while maintaining data integrity.
-  
-![MVVM](https://github.com/yourusername/yourrepository/blob/main/Images/viewmodel.png)
+To clone and run this application locally, follow these steps:
 
-By adopting the MVVM architecture, the Sentiment Analysis app gains several benefits:
-
-- **Separation of Concerns:** Each component has a well-defined responsibility, leading to a structured and easily maintainable codebase.
-
-- **Testability:** Business logic within the ViewModel can be independently tested, enhancing overall reliability.
-
-- **Scalability:** Adding features or making changes becomes more straightforward, as components remain isolated.
-
-- **Data Binding:** Coupled with ViewModel, data binding streamlines UI-data interaction, resulting in a smoother user experience.
-
-In essence, the MVVM architecture empowers the Sentiment Analysis app with a foundation that promotes code quality, maintenance efficiency, and a delightful user experience. It seamlessly integrates various technologies and libraries while laying the groundwork for future enhancements.
-
-## Usage
-
-- Analyze sentiments and emotions in Twitter profiles and posts.
-- Explore sentiment trends with comprehensive dashboards.
-- Perform sentiment analysis on custom sentences for immediate insights.
-- Switch between light and dark themes for a personalized user experience.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YourUsername/YourRepository.git
+2. Open the project in Android Studio.
+3. Build and run the application on your Android device or emulator.
 
 ## License
 
-This project is licensed under the [Apache-2.0 license](https://github.com/yourusername/yourrepository/blob/main/LICENSE). See the [Apache-2.0 license](https://github.com/yourusername/yourrepository/blob/main/LICENSE) file for details.
+This project is licensed under the [Apache-2.0 license](https://github.com/nirajk24/Sentify-SIH?tab=Apache-2.0-1-ov-file). See the [Apache-2.0 license](https://github.com/nirajk24/Sentify-SIH?tab=Apache-2.0-1-ov-file) file for details.
 
 ## Contact
 
