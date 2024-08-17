@@ -72,4 +72,4 @@ This project is licensed under the [Apache-2.0 license](https://github.com/niraj
 
 Have questions or feedback? Feel free to reach out:
 
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/nirajk24)
+- LinkedIn: [Niraj](https://www.linkedin.com/in/nirajk24)
